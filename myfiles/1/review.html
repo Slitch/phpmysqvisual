@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+
+	<title>Hello, world!</title>
+
+</head>
+<body>
+<div class="container">
+
+<h2>Review of chapter 1</h2>
+<ul>
+	<li>What tags are used to surround PHP code? <br>< ? p h p . . . and ? > without the spaceing</li>
+	<li>What extension should PHP file have? <br>filename.php</li>
+	<li>What does a page\'s <i>encoding</i> refer to? what impact does encoding have on the page?<br>The encoding you use in a file dictates what characters can be represented (and therefor what language can be used). <br>utf-8 is the most used "Unicode Transformation Format" and you have to make sure your text editor or ide save the file in this encoding else you\'ll most likely see odd characters in the browser.</li>
+	<li>What PHP functions, or langauge construcs, can you use to send data to the browser? <br>echo or print.</li>
+	<li>How does using single versus double quotation marks differ in creating or printing strings?<br>Single quotation treats things literaly, where as double quotion interpretes code like variables to there values</li>
+	<li>What does it mean to escape a character in a string? <br>A string of text quoted in single quotation marks containing word with single quotation like "you'll page's variable's isn't" will have to be escaped using a backslash \ befor the the single quotation like this: <br>"you\'ll page\'s variable\'s isn\'t" or it will mess up your string</li>
+	<li>What are the three comment syntaxes in PHP? Wich on can be used over multiple line? <br># and // is use for commenting out a single line. Everrthing between /* and */ can span over multiple lines</li>
+	<li>What characters do all variables names begin with? dollar sign $.<br>What characters can come next? letter or underscore.<br>What other characters can be used in a variable's name? numbers and big letters.</li>
+	<li>What tags are used to surround PHP code? <?php ?></li>
+	<li>Are variable names case-sensitive or case-insensitive? <br>case-sensitive. $varname and $VarName is two different variables</li>
+	<li>What is the assignment operator? <br>the equal sign (=) is usd to assign variable to a value like this: <br>$varName = 45;</li>
+	<li>How do you create a string variable? like this: <br>$var = 'This is a string'; .. or <br>$var1 = "this is another string"; <br>remember there is a difference between single quotation and double quotation can use echo ir print to print the variable value in the browser using echo $var;</li>
+	<li>What is concatenation operator?<br> concatenation operator is a punctuatio used to concatinate to thing together like this:<br>echo 'You are ' . $age . ' years old.';<br>$author = $firstName . ' ' . $lastName; </li>
+	<li>How are consatats defined and used?<br>define('NAME', value);<br>constants cannot change value like variable<br>you print it by using the name<br>echo NAME;</li>
+</ul>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="bootstrap-4.3.1-dist/js/jquery-3.3.1.slim.min.js"><\/script>')</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="bootstrap-4.3.1-dist/js/popper.min.js"><\/script>')</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"><\/script>')</script>
+</body>
+</html>
