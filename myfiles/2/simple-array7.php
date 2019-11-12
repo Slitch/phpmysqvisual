@@ -10,6 +10,12 @@ $tv = [
 	'MD' => 'MeryLand'
 ];
 $artists = ['Clem Smnide', 'Shins', 'Eels'];
+$days = [1 => 'Sun', 'Mon', 'Tue'];
 
-echo $tv[0] . $br;
+echo $tv['IA'] . $br;
+echo $tv['MD'] . $br;
+echo $artists[0] . $br;
+echo $artists[1] . $br;
+echo $artists[2] . $br;
+echo $days[3] . $br;
 ?>
