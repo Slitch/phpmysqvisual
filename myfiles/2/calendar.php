@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,43 +11,61 @@
 </head>
 <body>
 <div class="container">
-<?php # Script 2.5 - handle_form.php #4
+<?php # Script 2.9 - calendar.php #2
 
-// Set POST vaeriable
-$name = $_POST['name'];
-$comments = $_POST['comments'];
-$email = $_POST['email'];
 
-// Set not-empty variables
-$e_name = !empty($name);
-$e_comments = !empty($comments);
-$e_email = !empty($email);
+// Make the month array:
+$month = [1 => 
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December'
+];
 
-if ( $e_name && $e_comments && $e_email ) {
-	echo "<p>Thank you, <strong>{$name}</strong>, for the following comments:</p>
-	<pre>{$comments}</pre>
-	<p>We will reply to you at <em>{$email}</em></p>\n";
-} else {
-	echo '<p class="text-danger">Please go back and fill out the form again.</p>';
+// Make the days and years array:
+$days = range(1, 31);
+$years = range(2017, 2027);
+
+// Make days pull-down menu:
+echo '<select name="month">';
+foreach ($month as $value) {
+	// All commented out example works
+	echo "<option value=\"$value\">$value</option>\n";
+	// echo "<option value=" . $value . ">$value</option>\n";
+	// echo '<option value="' . $value . '">' . $value . '</option>' . "\n";
+	// echo "<option value=\"{$value}\">{$value}</option>\n";
 }
+echo '</select>' . "\n";
 
-// Validate the gender;
-if (isset($_POST['gender'])) {
-
-	$gender = $_POST['gender'];
-
-	if ($gender == 'M') {
-		$greeting = '<p><strong>Good day, Sir!</strong></p>';
-	} elseif ($gender == 'F') {
-		$greeting = '<p><strong>Good day, Madam!</strong></p>';
-	} else { // Unacceptable value:
-		$gender = NULL;
-		echo '<p class="text-danger">Gender should be either "M" or "F"!</p>';
-	}
-} else { // $_POST['gender'] is not set.
-	$gender = NULL;
-	echo '<p class="text-danger">You forgot to select your gender!</p>';
+// Make days pull-down menu:
+echo '<select name="day">';
+foreach ($days as $value) {
+	// All commented out example works
+	echo "<option value=\"$value\">$value</option>\n";
+	// echo "<option value=" . $value . ">$value</option>\n";
+	// echo '<option value="' . $value . '">' . $value . '</option>' . "\n";
+	// echo "<option value=\"{$value}\">{$value}</option>\n";
 }
+echo '</select>' . "\n";
+
+// Make the years pull-down menu:
+echo '<select name="years">';
+foreach ($years as $value) {
+	// All commented out example works
+	echo "<option value=\"$value\">$value</option>\n";
+	// echo "<option value=" . $value . ">$value</option>\n";
+	// echo '<option value="' . $value . '">' . $value . '</option>' . "\n";
+	// echo "<option value=\"{$value}\">{$value}</option>\n";
+}
+echo '</select>' . "\n";
 
 // ========== END OF PHP SCRIPT ==========
 ?>
