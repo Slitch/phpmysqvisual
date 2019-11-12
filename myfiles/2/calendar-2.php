@@ -31,14 +31,14 @@ $month = [1 =>
 ];
 
 // Make the days and years array:
-$days = range(1, 31);
-$years = range(2017, 2027);
+// $days = range(1, 31);
+// $years = range(2017, 2027);
 
 // Make days pull-down menu:
 echo '<select name="month">';
 foreach ($month as $key => $value) {
 	// All commented out example works
-	echo "<option value=\"$value\">$value</option>\n";
+	echo "<option value=\"$key\">$value</option>\n";
 	// echo "<option value=" . $value . ">$value</option>\n";
 	// echo '<option value="' . $value . '">' . $value . '</option>' . "\n";
 	// echo "<option value=\"{$value}\">{$value}</option>\n";
@@ -47,23 +47,15 @@ echo '</select>' . "\n";
 
 // Make days pull-down menu:
 echo '<select name="day">';
-foreach ($days as $value) {
-	// All commented out example works
-	echo "<option value=\"$value\">$value</option>\n";
-	// echo "<option value=" . $value . ">$value</option>\n";
-	// echo '<option value="' . $value . '">' . $value . '</option>' . "\n";
-	// echo "<option value=\"{$value}\">{$value}</option>\n";
+for ($day=1; $day <= 31; $day++) { 
+	echo "<option value=\"$day\">$day</option>\n";
 }
 echo '</select>' . "\n";
 
 // Make the years pull-down menu:
-echo '<select name="years">';
-foreach ($years as $value) {
-	// All commented out example works
-	echo "<option value=\"$value\">$value</option>\n";
-	// echo "<option value=" . $value . ">$value</option>\n";
-	// echo '<option value="' . $value . '">' . $value . '</option>' . "\n";
-	// echo "<option value=\"{$value}\">{$value}</option>\n";
+echo '<select name="year">';
+for ($year = 2017; $year <= 2027 ; $year++) { 
+	echo "<option value=\"$year\">$year</option>\n";
 }
 echo '</select>' . "\n";
 
