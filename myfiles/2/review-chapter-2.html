@@ -12,32 +12,63 @@
 
 		<h2>Review of chapter 2</h2>
 		<ul>
-			<li>What is the significance of a form’s attribute? Of its attribute? <br>
+			<li>&#9989; What is the significance of a form’s attribute? Of its attribute? <br>
 			elements for taking inputs, action(sent the form data to a page), POST method is most used an more secure, input names are important</li>
-			<li>Why must an HTML form that gets submitted to a PHP script be loaded through a URL? What would happen upon submitting the form if it were not loaded through a URL?<br>
+			<li>&#9989; Why must an HTML form that gets submitted to a PHP script be loaded through a URL? What would happen upon submitting the form if it were not loaded through a URL?<br>
 			PHP script must be run through a URL, the form must also be run through a URL. Otherwise, when you go to submit the form, you’ll see PHP code  instead of the proper result</li>
-			<li>What are the differences between using single and double quotation marks to delineate strings?<br>
+			<li>&#9989; What are the differences between using single and double quotation marks to delineate strings?<br>
 			Using single quotation marks in PHP to delineate strings is a great way to avoid extra work when quoting blocks of HTML or any other string that contains a number of double quotation marks. And you don't need to escape the double quotation marks all the time.</li>
-			<li>What control structures were introduced in this chapter?</li>
-			<li>What new variable type was introduced in this chapter?</li>
-			<li>What operator tests for equality? What is the assignment operator?</li>
-			<li>Why are textual form elements validated using empty() but other form elements are validated using isset()?</li>
-			<li>What is the difference between an indexed array and an associative array?</li>
-			<li>With what value do indexed arrays begin (by default)? If an indexed array has ten elements in it, what would the expected index be of the last element in the array?</li>
-			<li>What are the superglobal arrays? From where do the following superglobals get their values?<br>
-				▸ $_GET<br>
-				▸ $_POST<br>
-				▸ $_COOKIE<br>
-				▸ $_REQUEST<br>
-				▸ $_SESSION<br>
-				▸ $_SERVER<br>
-				▸ $_ENV
+			<li>&#9989; What control structures were introduced in this chapter?<br>
+			foreach loop, for loop, while loop, if, else, elseif, switch, break</li>
+			<li>&#9989; What new variable type was introduced in this chapter?<br>
+			Arrays, NULL, Booleans.<br>https://www.tutorialspoint.com/php/php_variable_types.htm</li>
+			<li>&#9989; What operator tests for equality? What is the assignment operator?<br>
+			by using double equal sign == . Assignment operator? left operand gets set to the value of the expression on the right</li>
+			<li>&#9989; Why are textual form elements validated using empty() but other form elements are validated using isset()?<br>
+			empty — Determine whether a variable is empty. isset — Determine if a variable is declared and is different than NULL</li>
+			<li>&#9989; What is the difference between an indexed array and an associative array?<br>
+			Indexed use numbers as the keys. Associative use strings as keys.</li>
+			<li>&#9989; With what value do indexed arrays begin (by default)? If an indexed array has ten elements in it, what would the expected index be of the last element in the array?<br>
+			By default an indexed array begins with the value 0. The last expected index would be 9.</li>
+			<li>&#9989; What are the superglobal arrays? From where do the following superglobals get their values?<br>
+				▸ $_GET - The $_GET variable is where PHP stores all of the values sent to a PHP script via the GET method (possibly but not necessarily from an HTML form)<br>
+				▸ $_POST - $_POST stores all of the data sent to a PHP script from an HTML form that uses the POST method<br>
+				▸ $_COOKIE - Cookies are a way for a server to store information on the user’s machine.<br>
+				▸ $_REQUEST - HTTP Request variables (less secure)<br>
+				▸ $_SESSION - Is more secure than Cookie because data is stored on the server and not the users computer.<br>
+				▸ $_SERVER - Stores information about the server PHP is running on<br>
+				▸ $_ENV - stores information about the server PHP is running on.
 			</li>
-			<li>How can you print an individual indexed array item? How can you print an individual associative array item? Note: There is more than one answer to both questions.</li>
-			<li>What does the count() function do?</li>
-			<li>What impact does printing \n have on the browser?</li>
-			<li>Generally speaking, when would you use a while loop? When would you use a for loop? When would you use a foreach loop? What is the syntax of each loop type?</li>
-			<li>What is the ++ operator? What does it do?</li>
+			<li>&#9989; How can you print an individual indexed array item?<br>
+				print $band[0]; or echo $band[0]; // key = 0 referrers to the first element in the indexed array. Indexed array use numbers as the keys.<br>
+				&#9989; How can you print an individual associative array item?<br>
+				print $states['MD']; or echo $states['MD']; // associative array use strings as keys.<br>
+				Note: There is more than one answer to both questions.</li>
+			<li>&#9989; What does the count() function do?<br>
+			Count all elements in an array, or something in an object</li>
+			<li>&#9989; What impact does printing \n have on the browser?<br>
+			Print the newline character (\n) within double quotation marks, which is equivalent to Enter or Return, but the formatting is only visible in the browsers HTML source code.</li>
+			<li>&#9989; Generally speaking, when would you use a while loop? <br>
+				The while loop will most frequently be used when retrieving results from a database.<br>
+				&#9989; When would you use a for loop? When would you use a foreach loop? <br>
+				For loop is a better choice for doing something <i>a known number of times</i> whereas while is used when a condition will be true an <i>unknown number of times</i>.<br>
+			&#9989; What is the syntax of each loop type?</li>
+<pre>
+while (condition) {
+    // Do something.
+}
+for (initial expression; condition; closing expression) {
+  // Do something.
+}
+foreach ($array as $value) {
+  // Do something with $value.
+}
+foreach ($array as $key => $value) {
+  echo "The value at $key is $value.";
+}</pre>
+			<li>&#9989; What is the ++ operator? What does it do?<br>
+				$a++; // is the same as $var = $a + 1; called Post-increment. Returns $a, then increments $a by one.<br>
+			https://www.php.net/manual/en/language.operators.increment.php</li>
 		</ul>
 		<h2>Pursue</h2>
 		<ul>
