@@ -1,0 +1,11 @@
+table {
+	font-size: 20px;
+	width: 100%;
+}
+.resultline {
+	text-decoration: underline;
+}
+.underresult {
+	border-bottom: double black;
+	color: white;
+}
