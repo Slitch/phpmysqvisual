@@ -13,11 +13,17 @@
 <?php # Pursue - Create form for project - handle_form.php
 
 
-// Variabler for $_POST
+// set Variables for $_POST
 $loen_foer_skat 	= $_POST['loen_foer_skat'];
 $fradrag_pr_md		= $_POST['fradrag_pr_md'];
 $traekprocent 		= $_POST['traekprocent'];
 $atp_pr_md 			= $_POST['atp_pr_md'];
+
+// Set variables for Not-Empty
+$e_loen_foer_skat 	= !empty($loen_foer_skat);
+$e_fradrag_pr_md	= !empty($fradrag_pr_md);
+$e_traekprocent 	= !empty($traekprocent);
+$e_atp_pr_md 		= !empty($atp_pr_md);
 
 // Beregn A-Indkomst
 $a_indkomst			= ($loen_foer_skat - $atp_pr_md);
@@ -33,34 +39,53 @@ function fl($b) {
 	return number_format(floor(	$b) , 2, ',','.');
 }
 
-// Print de forskellige tal:
-echo '
-<p>A-Indkomst: ' . m($a_indkomst) . '</p>
-<p>Betal til skat: ' . m($betal_til_skat) . '</p>
-<p>Løn resultat: ' . m($udbetalt) . '</p>
-<div class="alert alert-success" role="alert">
-<hr>
-<p>Nettoudbetalt (efter skat) / måned: ' . fl($udbetalt) . '
-</div>';
-
-echo '
-<div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Well done!</h4>
-  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-  <hr>
-  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-</div>';
-/*
-
-betal til skat
-
-udbetalt
-
-*/
-
+// Validate and print numbers
+if ( $e_loen_foer_skat && 
+	 $e_fradrag_pr_md && 
+	 $e_traekprocent &&
+	 $e_atp_pr_md ) {
+	echo '
+	<div class="alert alert-primary" role="alert">
+	<p>A-Indkomst: ' . m($a_indkomst) . '</p>
+	<p>Betals til skat: ' . m($betal_til_skat) . '</p>
+	<p>Løn resultat: ' . m($udbetalt) . '</p>
+	<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Type</th>
+      		<th scope="col">Beløb</th>
+    	</tr>
+    </thead>
+    <tbody>
+    <tr>
+    	<th scope="row">A-indkomst:</th>
+		<td>' . m($a_indkomst) . '</td>
+    </tr>
+    <tr>
+    	<th scope="row">Betales til skat:</th>
+    	<td>' . m($betal_til_skat) . '</td>
+    </tr>
+    <tr>
+    	<td>Løn resultat:</td>
+    	<td>' . m($udbetalt) . '</td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+	<div class="alert alert-success role="alert">
+	<h4 class="alert-heading">Udbetaling:</h4>
+	<p><strong>Kildeskatteloven:</strong> Af det beløb, der efter foranstående skal udbetales den skattepligtige, udbetales kun det hele kronebeløb.</p>
+	<p>Det betyder at der skal rundes ned til hele kronebeløb uanset hvor stor øre beløber er.</p>
+	<hr>
+	<p>Nettoudbetalt (efter skat) / måned: ' . fl($udbetalt) . '</p>
+	</div>';
+} else {
+	echo '<p class="text-danger">Please go back and fill out the form again.</p>';
+}
 // ========== END OF PHP SCRIPT ==========
 ?>
 </div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
