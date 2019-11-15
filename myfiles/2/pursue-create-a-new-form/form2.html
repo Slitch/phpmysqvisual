@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Form</title>
+</head>
+<body>
+	<form action="form_handler2.php" method="post">
+		<fieldset><legend>Beregn din løn udbetaling</legend>
+			<form action="handle_form.php" method="post">
+				<div>
+					<label for="loen">Løn</label>
+
+					<div>
+						<input type="number" id="loen" name="loen" placeholder="Skriv beløb">
+					</div>
+				</div>
+				<div>
+					<label for="skattefradrag">Skattefradrag</label>
+					<div>
+						<input type="number" id="skattefradrag" name="skattefradrag" placeholder="skriv beløb">
+					</div>
+				</div>
+
+				<div>
+					<label for="am-bidrag">AM-bidrag</label>
+					<div>
+						<input type="number" id="am-bidrag" name="am-bidrag" placeholder="skriv procent" value="8">
+					</div>
+				</div>
+
+				<div>
+					<label for="pensionsprocent">Pensionsprocent</label>
+					<div>
+						<input type="number" id="pensionsprocent" name="pensionsprocent" placeholder="Skriv beløb">
+					</div>
+				</div>
+				
+				<div>
+					<label for="atp">ATP</label>
+					<div>
+						<input type="number" id="atp" name="atp" value="90">
+					</div>
+				</div>
+
+				<div>
+					<label for="traekprocent">Trækprocent</label>
+					<div>
+						<input type="number" id="traekprocent" name="traekprocent" value="37">
+					</div>
+				</div>
+
+			</fieldset>
+			<button type="submit" name="submit">Beregn udbetaling</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
 	<title>Form</title>
 </head>
-<body>
+<body class="bg-light">
 	<div class="container">
 
 		<!-- Review chapter 2 - Pursue - mathform.html -->
@@ -15,66 +15,47 @@
 		<form action="form_handler.php" method="post">
 
 			<fieldset><legend>Beregn din løn udbetaling</legend>
-				<form action="handle_form.php" method="post">
 
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="loen" id="loen" value="loen" checked>
-						<label class="form-check-label" for="loen">
-							Løn
-						</label>
+				<form action="handle_form.php" method="post">
+					<!--
+					<div class="form-group">
+						<label for="indkomst_type">Example select</label>
+						<select class="form-control" name="indkomst_type" id="indkomst_type">
+							<option value="loen">Løn</option>
+							<option value="pension">Pension</option>
+							<option value="dagpenge_akasse_kontanthjaelp">Dagpenge (A-kasse) eller Kontanthjælp</option>
+							<option value="su">SU</option>
+							<option value="efterloen">Efterløn</option>
+						</select>
 					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="pension" id="pension" value="pension">
-						<label class="form-check-label" for="pension">
-							Pension
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="dagpenge_akasse_kontanthjaelp" id="dagpenge_akasse_kontanthjaelp" value="dagpenge_akasse_kontanthjaelp">
-						<label class="form-check-label" for="dagpenge_akasse_kontanthjaelp">
-							Dagpenge (A-kasse) eller Kontanthjælp
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="su" id="su" value="su">
-						<label class="form-check-label" for="su">
-							SU
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="efterloen" id="efterloen" value="efterloen">
-						<label class="form-check-label" for="efterloen">
-							Efterløn
-						</label>
-					</div>
+					-->
 
 					<div class="form-group row">
 						<label for="loen_foer_skat" class="col-sm-2 col-form-label">Indkomst pr. måned</label>
 						<div class="col-sm-10">
-							<input type="number" id="loen_foer_skat" name="loen_foer_skat" class="form-control" placeholder="Skriv beløb">
+							<input type="number" id="loen_foer_skat" name="loen_foer_skat" class="form-control form-control-lg" placeholder="Skriv beløb">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="fradrag_pr_md" class="col-sm-2 col-form-label">Månedsfradrag</label>
 						<div class="col-sm-10">
-							<input type="number" id="fradrag_pr_md" name="fradrag_pr_md" class="form-control" placeholder="skriv beløb">
+							<input type="number" id="fradrag_pr_md" name="fradrag_pr_md" class="form-control form-control-lg" placeholder="skriv beløb">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="traekprocent" class="col-sm-2 col-form-label">Trækprocent</label>
 						<div class="col-sm-10">
-							<input type="number" id="traekprocent" name="traekprocent" class="form-control" placeholder="skiv beløb">
+							<input type="number" id="traekprocent" name="traekprocent" class="form-control form-control-lg" placeholder="skiv beløb">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="atp_pr_md" class="col-sm-2 col-form-label">ATP pr. md.</label>
 						<div class="col-sm-10">
-							<input type="number" id="atp_pr_md" name="atp_pr_md" class="form-control" placeholder="Skriv beløb">
+							<input type="number" id="atp_pr_md" name="atp_pr_md" class="form-control form-control-lg" placeholder="Skriv beløb">
 						</div>
 					</div>
 				</fieldset>
-				<input type="submit" name="submit" value="Submit My information"></p>
-				<button type="button" input type="submit" name="submit" class="btn btn-primary">Beregn udbetaling</button>
+				<button type="submit" name="submit" class="btn btn-primary">Beregn udbetaling</button>
 			</form>
 
 		</div>
