@@ -1,59 +1,65 @@
 <!doctype html>
-<html lang="en">
+<html lang="da-DK">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
 	<title>Form</title>
 </head>
-<body>
-	<form action="form_handler2.php" method="post">
-		<fieldset><legend>Beregn din løn udbetaling</legend>
-			<form action="handle_form.php" method="post">
-				<div>
-					<label for="loen">Løn</label>
+<body class="bg-light">
 
-					<div>
-						<input type="number" id="loen" name="loen" placeholder="Skriv beløb">
-					</div>
-				</div>
-				<div>
-					<label for="skattefradrag">Skattefradrag</label>
-					<div>
-						<input type="number" id="skattefradrag" name="skattefradrag" placeholder="skriv beløb">
-					</div>
-				</div>
+	<div class="container">
 
-				<div>
-					<label for="am-bidrag">AM-bidrag</label>
-					<div>
-						<input type="number" id="am-bidrag" name="am-bidrag" placeholder="skriv procent" value="8">
-					</div>
-				</div>
+		<form action="form_handler2.php" method="post">
+			<fieldset><legend>Beregn din løn udbetaling</legend>
+				<form action="handle_form.php" method="post">
 
-				<div>
-					<label for="pensionsprocent">Pensionsprocent</label>
-					<div>
-						<input type="number" id="pensionsprocent" name="pensionsprocent" placeholder="Skriv beløb">
+					<div class="form-group mb-1">
+						<label for="loen">Løn</label>
+						<input class="form-control" type="number" id="loen" name="loen" placeholder="Skriv beløb">
 					</div>
-				</div>
-				
-				<div>
-					<label for="atp">ATP</label>
-					<div>
-						<input type="number" id="atp" name="atp" value="90">
-					</div>
-				</div>
 
-				<div>
-					<label for="traekprocent">Trækprocent</label>
-					<div>
-						<input type="number" id="traekprocent" name="traekprocent" value="37">
+					<div class="form-group mb-1">
+						<label for="skattefradrag">personfradrag</label>
+						<input class="form-control" type="number" id="skattefradrag" name="skattefradrag" placeholder="skriv beløb">
 					</div>
-				</div>
 
-			</fieldset>
-			<button type="submit" name="submit">Beregn udbetaling</button>
-		</form>
-	</div>
-</body>
-</html>
+					<div class="form-grou mb-1p">
+						<label for="am_bidrag">AM-bidrag</label>
+						<input class="form-control" type="number" id="am_bidrag" name="am_bidrag" placeholder="skriv procent" value="8">
+					</div>
+
+					<div class="form-group mb-1">
+						<label for="pensionsprocent">AM-pension</label>
+						<input class="form-control" type="number" id="pensionsprocent" name="pensionsprocent" placeholder="Skriv beløb">
+					</div>
+
+					<div class="form-group mb-1">
+						<label for="atp">ATP pension</label>
+						<input class="form-control" type="number" id="atp" name="atp" value="90">
+					</div>
+
+					<div class="form-group mb-1">
+						<label for="traekprocent">Trækprocent</label>
+						<input class="form-control" type="number" id="traekprocent" name="traekprocent" value="37">
+					</div>
+
+				</fieldset>
+				<button type="submit" class="btn btn-primary btn-lg" name="submit">Beregn udbetaling</button>
+			</form>
+
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="bootstrap-4.3.1-dist/js/jquery-3.3.1.slim.min.js"><\/script>')</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="bootstrap-4.3.1-dist/js/popper.min.js"><\/script>')</script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"><\/script>')</script>
+	</body>
+	</html>

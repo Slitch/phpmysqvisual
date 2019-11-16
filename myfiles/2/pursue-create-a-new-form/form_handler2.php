@@ -44,15 +44,15 @@ $traekprocent 		= $_POST['traekprocent'];
 // $e_atp 		= !empty($atp);
 // $e_traekprocent 	= !empty($traekprocent);
 
-$pensionsprocent_res	= ($løn / 100) * $pensionsprocent;
-$am_bidrag_res			= (($løn - $atp - $pensionsprocent_res) / 100) * $am_bidrag;
-$nettoloen				= $løn - $atp - $pensionsprocent_res - $am_bidrag_res;
+$pensionsprocent_res	= ($loen / 100) * $pensionsprocent;
+$am_bidrag_res			= (($loen - $atp - $pensionsprocent_res) / 100) * $am_bidrag;
+$nettoloen				= $loen - $atp - $pensionsprocent_res - $am_bidrag_res;
 
 // A-indkomst er det belkøb som der skal betales skat af:
 $a_indkomst				= $nettoloen;
 $skatte_grundlag		= ($a_indkomst - $skattefradrag);
 
-$betal_til_skat			= ($skatte_grundlag / 100) * $traekprocent);
+$betal_til_skat			= ( ($skatte_grundlag / 100) * $traekprocent );
 $loen_til_udbetaling	= $nettoloen - $betal_til_skat;
 
 // Penge function som formatere beløbene korrekt med komma, punktum og 2 decimaltal
@@ -61,7 +61,7 @@ function m($a) {
 }
 // fl function runder tallet ned
 function fl($b) {
-	return number_format(floor(	$b) , 2, ',','.');
+	return number_format(floor($b) , 2, ',','.');
 }
 
 	echo '
