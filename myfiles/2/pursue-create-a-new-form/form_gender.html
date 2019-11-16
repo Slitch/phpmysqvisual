@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da-DK">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,46 +7,37 @@
 	<!-- <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
 	<title>Form</title>
 </head>
-<body class="bg-light">
-
+<body>
 	<div class="container">
 
-		<form action="form_handler2.php" method="post">
-			<fieldset><legend>Beregn din løn udbetaling</legend>
+		<!-- Script 2.1 - form.html -->
 
-				<div class="form-group mb-1">
-					<label for="loen">Løn</label>
-					<input class="form-control" type="number" id="loen" name="loen" placeholder="Skriv beløb">
-				</div>
+		<form action="handle_form_gender.php" method="post">
 
-				<div class="form-group mb-1">
-					<label for="skattefradrag">personfradrag</label>
-					<input class="form-control" type="number" id="skattefradrag" name="skattefradrag" placeholder="skriv beløb">
-				</div>
+			<fieldset><legend>Enter your information in the form below:</legend>
 
-				<div class="form-grou mb-1p">
-					<label for="am_bidrag">AM-bidrag</label>
-					<input class="form-control" type="number" id="am_bidrag" name="am_bidrag" placeholder="skriv procent" value="8">
-				</div>
+				<p><label>Name: <input type="text" name="name" size="20" maxlength="40"></label></p>
 
-				<div class="form-group mb-1">
-					<label for="pensionsprocent">AM-pension</label>
-					<input class="form-control" type="number" id="pensionsprocent" name="pensionsprocent" placeholder="Skriv beløb">
-				</div>
+				<p><label>Email Address: <input type="email" name="email" size="40" maxlength="60"></label></p>
 
-				<div class="form-group mb-1">
-					<label for="atp">ATP pension</label>
-					<input class="form-control" type="number" id="atp" name="atp" value="90">
-				</div>
+				<p><label for="gender">Gender: </label><input type="radio" name="gender" value="M"> Male <input type="radio" name="gender" value="F"></p>
 
-				<div class="form-group mb-1">
-					<label for="traekprocent">Trækprocent</label>
-					<input class="form-control" type="number" id="traekprocent" name="traekprocent" value="37">
-				</div>
+				<p><label>Age:
+					<select name="age">
+						<option value="0-30">Under 30</option>	
+						<option value="30-60">Between 30-60</option>	
+						<option value="60+">Over 60</option>	
+					</select>
+				</label></p>
+
+				<p><label>Comments: <textarea name="comments" rows="3" cols="40"></textarea></label></p>
 
 			</fieldset>
-			<button type="submit" class="btn btn-primary btn-lg" name="submit">Beregn udbetaling</button>
+
+			<p align="center"><input type="submit" name="submit" value="Submit My information"></p>
+
 		</form>
+
 
 	</div>
 
