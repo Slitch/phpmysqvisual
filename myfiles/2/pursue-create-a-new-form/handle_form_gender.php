@@ -12,15 +12,18 @@
 	<div class="container">
 <?php # Script 2.5 - handle_form.php #4
 
-// Set POST vaeriable
-$name = $_POST['name'];
-$comments = $_POST['comments'];
-$email = $_POST['email'];
+// Set POST variable
+$name 		= $_POST['name'];
+$comments 	= $_POST['comments'];
+$email 		= $_POST['email'];
+$age 		= $_POST['age'];
 
 // Set not-empty variables
-$e_name = !empty($name);
+$e_name 	= !empty($name);
 $e_comments = !empty($comments);
-$e_email = !empty($email);
+$e_email 	= !empty($email);
+
+
 
 if ( $e_name && $e_comments && $e_email ) {
 	echo "<p>Thank you, <strong>{$name}</strong>, for the following comments:</p>
@@ -30,21 +33,34 @@ if ( $e_name && $e_comments && $e_email ) {
 	echo '<p class="text-danger">Please go back and fill out the form again.</p>';
 }
 
-// rewritten frome two nested conditions into to one condition
-if (isset($_REQUEST['gender']) && $_REQUEST['gender']=='M')
-{
-	$gender = $_REQUEST['gender']; 
+// rewritten from two nested conditions into to one condition
+if (isset($_POST['gender']) && $_POST['gender']=='M'){
+	$gender = $_POST['gender']; 
 	echo '<p><b>Good day, Sir!</b></p>'; 
-} 
-elseif (isset($_REQUEST['gender']) && $_REQUEST['gender']=='F') 
-{ 
-	$gender = $_REQUEST['gender']; 
+} elseif (isset($_POST['gender']) && $_POST['gender']=='F') { 
+	$gender = $_POST['gender']; 
 	echo '<p><b>Good day, Madam!</b></p>'; 
-} 
-else 
-{ 
+} else { 
 	$gender = NULL; echo '<p class="error">You forgot to select your gender!</p>';
+}
+
+// Validate Age
+if (!isset($age) || $age === '') {
+	echo '<p class="text-danger">please select an age range</p>';
+} else {
+	$age = $_POST['age']; 
+}
+if ($age == '0-30') {
+	echo '<p>Under 30</p>';
 } 
+else if($age == '30-60') {
+	echo '<p>You are Between 30-60</p>';
+}
+else if($age == '60+') {
+	echo '<p>You are over 60</p>';
+} else {
+	echo '<p class="text-danger">age option is not selected</p>';
+}
 
 // ========== END OF PHP SCRIPT ==========
 ?>
