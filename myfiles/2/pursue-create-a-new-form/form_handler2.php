@@ -15,14 +15,14 @@
 $loen 				= $_POST['loen'];
 $skattefradrag		= $_POST['skattefradrag'];
 $am_bidrag			= $_POST['am_bidrag'];
-$pensionsprocent	= $_POST['pensionsprocent'];
+$am_pension	        = $_POST['am_pension'];
 $atp 				= $_POST['atp'];
 $traekprocent 		= $_POST['traekprocent'];
 
 $n_loen             = is_numeric($loen);
 $n_skattefradrag    = is_numeric($skattefradrag);
 $n_am_bidrag        = is_numeric($am_bidrag);
-$n_pensionsprocent  = is_numeric($pensionsprocent);
+$n_am_pension       = is_numeric($am_pension);
 $n_atp              = is_numeric($atp);
 $n_traekprocent     = is_numeric($traekprocent);
 
@@ -30,7 +30,7 @@ $n_traekprocent     = is_numeric($traekprocent);
 // $e_loen 			= !empty($loen);
 // $e_skattefradrag	= !empty($skattefradrag);
 // $e_am_bidrag		= !empty($am_bidrag);
-// $e_pensionsprocent	= !empty($pensionsprocent);
+// $e_am_pension	= !empty($am_pension);
 // $e_atp	            = !empty($atp);
 // $e_traekprocent 	= !empty($traekprocent);
 
@@ -38,15 +38,15 @@ $n_traekprocent     = is_numeric($traekprocent);
 if ( $n_loen && 
  $n_skattefradrag && 
  $n_am_bidrag && 
- $n_pensionsprocent && 
+ $n_am_pension && 
  $n_atp && 
  $n_traekprocent ) 
 
 {   // Do all this code
 
-    $pensionsprocent_res    = ($loen / 100) * $pensionsprocent;
-    $am_bidrag_res          = (($loen - $atp - $pensionsprocent_res) / 100) * $am_bidrag;
-    $nettoloen              = $loen - $atp - $pensionsprocent_res - $am_bidrag_res;
+    $am_pension_res         = ($loen / 100) * $am_pension;
+    $am_bidrag_res          = (($loen - $atp - $am_pension_res) / 100) * $am_bidrag;
+    $nettoloen              = $loen - $atp - $am_pension_res - $am_bidrag_res;
 
     // A-indkomst er det belkøb som der skal betales skat af:
     $a_indkomst             = $nettoloen;
@@ -83,7 +83,7 @@ if ( $n_loen &&
     </tr>
     <tr>
     <td>AM-pension:</td>
-    <td>' . m($pensionsprocent_res) . '</td>
+    <td>' . m($am_pension_res) . '</td>
     </tr>
     <tr>
     <td>AM-bidrag:</td>
