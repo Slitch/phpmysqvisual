@@ -11,25 +11,31 @@
 <body>
 	<div class="container">
 <?php # Script 2.5 - handle_form.php #4
+// Review and pursue:
+// Rewrite the echo statement in the final version of handle_form.php (Script 2.5) so that it uses single quotation marks and concatenation instead of double quotation marks.
 
-// Set POST variable
-$name			= $_POST['name'];
-$comments		= $_POST['comments'];
-$email			= $_POST['email'];
-$age			= $_POST['age'];
-// $gender		= $_POST['gender'];
+// Check if $_POST is set
+// If $_POST is set then give it a variable as a shorthand
+// Set POST variable and check if it is set.
+if ( isset($_POST['name']) && isset($_POST['comments']) && isset($_POST['email']) ) {
+	$name				= $_POST['name'];
+  $comments		= $_POST['comments'];
+  $email			= $_POST['email'];
+} else {
+	$age = NULL; echo '<p class="text-danger">NOT-SET: Please go back and fill out the form again.</p>';
+}
 
+// WHY SET NOT-EMPTY VARIABLES?
 // Set not-empty variables
 $e_name 		= !empty($name);
-$e_comments 	= !empty($comments);
+$e_comments = !empty($comments);
 $e_email 		= !empty($email);
 
-
-
+// WHY USE THIS? SHOULD I CHECK IF IT IS SET?
 if ( $e_name && $e_comments && $e_email ) {
-	echo "<p>Thank you, <strong>{$name}</strong>, for the following comments:</p>
-	<pre>{$comments}</pre>
-	<p>We will reply to you at <em>{$email}</em></p>\n";
+	echo '<p>Thank you, <strong>' . $name . '</strong>, for the following comments:</p>
+	<pre>' . $comments . '</pre>
+	<p>We will reply to you at <em>' . $email . '</em></p>' . "\n";
 } else {
 	echo '<p class="text-danger">Please go back and fill out the form again.</p>';
 }
