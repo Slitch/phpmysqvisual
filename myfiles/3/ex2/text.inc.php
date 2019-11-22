@@ -1,0 +1,1 @@
+<?php echo 'This text comes from another php file which is included';
